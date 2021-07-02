@@ -1,3 +1,4 @@
+import ViewContainer from '@app/components/ViewContainer/ViewContainer';
 import React, { useEffect } from 'react';
 // import { Book } from '@interfaces/book';
 
@@ -13,7 +14,7 @@ function Library() {
 
   return (
     // TODO: Make a list of BookItems
-    <></>
+    <ViewContainer />
   );
 }
 

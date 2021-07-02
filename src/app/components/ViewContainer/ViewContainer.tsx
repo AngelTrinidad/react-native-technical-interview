@@ -24,7 +24,7 @@ const ViewContainer: React.FC<Props> = ({
   style,
   statusBarColor,
   renderHeader,
-  statusBarStyle = 'dark-content',
+  statusBarStyle = 'light-content',
   safeAreasEdges = ['top', 'right', 'bottom', 'left'],
   withPadding = true,
   withBottomPadding = true,
@@ -43,10 +43,7 @@ const ViewContainer: React.FC<Props> = ({
 
   return (
     <SafeAreaView edges={safeAreasEdges} style={[styles.container, containerStyles, style]} {...rest}>
-      <StatusBar
-        backgroundColor={statusBarColor || colors.header}
-        barStyle={statusBarStyle || 'dark-content'}
-      />
+      <StatusBar backgroundColor={statusBarColor || colors.headerBackground} barStyle={statusBarStyle} />
       {!!renderHeader && renderHeader()}
       <ViewFlex style={[paddingStyles, contentStyles]}>{children}</ViewFlex>
     </SafeAreaView>

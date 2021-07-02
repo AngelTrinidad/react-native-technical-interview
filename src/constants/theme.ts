@@ -9,7 +9,8 @@ export const themeValues: Theme = {
     textLight: '#DDDDDD',
     primaryBackground: '#E8F6EF',
     title: '#343A40',
-    header: '#39A2DB',
+    headerBackground: '#39A2DB',
+    headerTitle: 'white',
     bookItemBackground: 'white'
   },
   sizes: {

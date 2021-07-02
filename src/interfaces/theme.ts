@@ -5,7 +5,8 @@ export interface ThemeColors {
   textLight: string;
   primaryBackground: string;
   title: string;
-  header: string;
+  headerBackground: string;
+  headerTitle: string;
   bookItemBackground: string;
 }
 
