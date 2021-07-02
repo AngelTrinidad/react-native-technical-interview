@@ -4,7 +4,7 @@ import { View, ViewProps } from 'react-native';
 import styles from './styles';
 
 type Props = ViewProps & {
-  children?: React.ReactElement;
+  children?: React.ReactNode;
 };
 
 const ViewFlex: React.FC<Props> = ({ children, ...rest }) => {

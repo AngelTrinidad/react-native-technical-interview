@@ -6,7 +6,8 @@ const themeValues: Theme = {
     primary: '#B5EAEA',
     secondary: '#F38BA0',
     text: '#444444',
-    textLight: '#DDDDDD'
+    textLight: '#DDDDDD',
+    primaryBackground: '#B5EAEA'
   },
   sizes: {
     paddingScreen: 12

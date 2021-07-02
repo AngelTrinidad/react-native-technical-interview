@@ -3,6 +3,7 @@ export interface ThemeColors {
   secondary: string;
   text: string;
   textLight: string;
+  primaryBackground: string;
 }
 
 export interface ThemeFont {
