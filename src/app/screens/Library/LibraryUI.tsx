@@ -1,23 +1,27 @@
-import { ScrollContainer } from '@app/components';
-import { Book, ID } from '@interfaces/book';
+import { ViewContainer } from '@app/components';
+import { Book } from '@interfaces/book';
 import React from 'react';
+import { FlatList } from 'react-native';
 
 import BookItem from './components/BookItem';
+import styles from './styles';
 
 type Props = {
   books: Book[];
-  onPressBook?: (id: ID) => void;
+  onPressBook?: (book: Book) => void;
 };
 
 const LibraryUI: React.FC<Props> = ({ books, onPressBook }) => {
+  const renderItem = React.useCallback(({ item }) => <BookItem book={item} onPress={onPressBook} />, [
+    onPressBook
+  ]);
+
+  const keyExtractor = React.useCallback((item: Book) => item.id.toString(), []);
+
   return (
-    <ScrollContainer>
-      <>
-        {books.map(book => (
-          <BookItem key={book.id} book={book} onPress={onPressBook} />
-        ))}
-      </>
-    </ScrollContainer>
+    <ViewContainer withPadding={false}>
+      <FlatList data={books} renderItem={renderItem} keyExtractor={keyExtractor} style={styles.list} />
+    </ViewContainer>
   );
 };
 

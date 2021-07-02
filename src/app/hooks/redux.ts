@@ -1,5 +1,5 @@
 import { AppState } from '@interfaces/redux';
-import { useSelector as nativeUserSelector } from 'react-redux';
+import { useSelector as nativeUserSelector, useDispatch as nativeUseDispatch } from 'react-redux';
 
 export const useSelector = <TState = AppState, TSelected = unknown>(
   selector: (state: TState) => TSelected,
@@ -7,3 +7,5 @@ export const useSelector = <TState = AppState, TSelected = unknown>(
 ): TSelected => {
   return nativeUserSelector(selector, equalityFn);
 };
+
+export const useDispatch = nativeUseDispatch;
