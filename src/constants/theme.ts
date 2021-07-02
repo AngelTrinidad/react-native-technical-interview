@@ -1,7 +1,7 @@
 import { createTheming } from '@callstack/react-theme-provider';
 import { Theme } from '@interfaces/theme';
 
-const themeValues: Theme = {
+export const themeValues: Theme = {
   colors: {
     primary: '#B5EAEA',
     secondary: '#F38BA0',
