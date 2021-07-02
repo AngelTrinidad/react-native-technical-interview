@@ -25,7 +25,7 @@ const ViewContainer: React.FC<ViewContainerProps> = ({
   statusBarColor,
   renderHeader,
   statusBarStyle = 'light-content',
-  safeAreasEdges = ['top', 'right', 'bottom', 'left'],
+  safeAreasEdges = ['right', 'bottom', 'left'],
   withPadding = true,
   withBottomPadding = true,
   ...rest
