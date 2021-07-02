@@ -20,7 +20,13 @@ const LibraryUI: React.FC<Props> = ({ books, onPressBook }) => {
 
   return (
     <ViewContainer withPadding={false}>
-      <FlatList data={books} renderItem={renderItem} keyExtractor={keyExtractor} style={styles.list} />
+      <FlatList
+        data={books}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+        style={styles.list}
+        contentContainerStyle={styles.contentList}
+      />
     </ViewContainer>
   );
 };
