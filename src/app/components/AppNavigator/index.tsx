@@ -7,8 +7,8 @@ const StackNavigator = createStackNavigator();
 
 function AppNavigator() {
   return (
-    <StackNavigator.Navigator>
-      <StackNavigator.Screen name={Routes.LIBRARY} component={Library} options={{ title: 'Library' }} />
+    <StackNavigator.Navigator headerMode="none" mode="card">
+      <StackNavigator.Screen name={Routes.LIBRARY} component={Library} />
     </StackNavigator.Navigator>
   );
 }

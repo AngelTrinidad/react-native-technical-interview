@@ -5,13 +5,15 @@ export const themeValues: Theme = {
   colors: {
     primary: '#B5EAEA',
     secondary: '#F38BA0',
-    text: '#444444',
+    text: '#6E7C7C',
     textLight: '#DDDDDD',
-    primaryBackground: '#B5EAEA',
-    title: '#343A40'
+    primaryBackground: '#E8F6EF',
+    title: '#343A40',
+    header: '#39A2DB',
+    bookItemBackground: 'white'
   },
   sizes: {
-    paddingScreen: 12
+    paddingScreen: 16
   },
   fonts: {
     bold: 'system font',

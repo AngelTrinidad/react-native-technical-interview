@@ -1,23 +1,34 @@
 import React from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
-// import { Book } from '@interfaces/book';
+import { Image, TouchableOpacity, ViewStyle } from 'react-native';
+import { Book } from '@interfaces/book';
 import placeholder from '@assets/img/img_book_placeholder.png';
+import ViewFlex from '@app/components/ViewFlex/ViewFlex';
+import Text from '@app/components/Text/Text';
+import Title from '@app/components/Title/Title';
 
-// import styles from './styles';
+import styles from './styles';
 
 interface Props {
-  // TODO: Complete
+  book: Book;
+  onPress?: (id: string) => void;
+  style?: ViewStyle;
 }
 
-function BookItem() {
+const BookItem: React.FC<Props> = ({ book, onPress, style }) => {
+  // Callback when item pressed
+  const handlePress = React.useCallback((): void => {
+    if (onPress) onPress(book.id);
+  }, [onPress, book]);
+
   return (
-    <TouchableOpacity>
-      <Image source={placeholder} />
-      <View>
-        <Text>COMPLETE</Text>
-      </View>
+    <TouchableOpacity onPress={handlePress} style={[styles.container, style]}>
+      <Image source={placeholder} style={styles.image} />
+      <ViewFlex>
+        <Title numberOfLines={1}>{book.title}</Title>
+        <Text numberOfLines={1}>{book.subtitle}</Text>
+      </ViewFlex>
     </TouchableOpacity>
   );
-}
+};
 
-export default BookItem;
+export default React.memo(BookItem);

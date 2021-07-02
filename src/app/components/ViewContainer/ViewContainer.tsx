@@ -5,13 +5,17 @@ import { Edge, SafeAreaView } from 'react-native-safe-area-context';
 
 import ViewFlex from '../ViewFlex/ViewFlex';
 
+import styles from './styles';
+
 type Props = ViewProps & {
+  children?: React.ReactNode;
   safeAreasEdges?: Edge[];
   withPadding?: boolean;
   withBottomPadding?: boolean;
   contentStyles?: ViewStyle;
   statusBarColor?: string;
   statusBarStyle?: StatusBarStyle;
+  renderHeader?: () => React.ReactNode;
 };
 
 const ViewContainer: React.FC<Props> = ({
@@ -19,6 +23,7 @@ const ViewContainer: React.FC<Props> = ({
   contentStyles,
   style,
   statusBarColor,
+  renderHeader,
   statusBarStyle = 'dark-content',
   safeAreasEdges = ['top', 'right', 'bottom', 'left'],
   withPadding = true,
@@ -32,16 +37,17 @@ const ViewContainer: React.FC<Props> = ({
   };
 
   const paddingStyles: ViewStyle = {
-    paddingHorizontal: withPadding ? sizes.paddingScreen : 0,
+    padding: withPadding ? sizes.paddingScreen : 0,
     paddingBottom: withPadding && withBottomPadding ? sizes.paddingScreen : 0
   };
 
   return (
-    <SafeAreaView edges={safeAreasEdges} style={[containerStyles, style]} {...rest}>
+    <SafeAreaView edges={safeAreasEdges} style={[styles.container, containerStyles, style]} {...rest}>
       <StatusBar
-        backgroundColor={statusBarColor || colors.primaryBackground}
+        backgroundColor={statusBarColor || colors.header}
         barStyle={statusBarStyle || 'dark-content'}
       />
+      {!!renderHeader && renderHeader()}
       <ViewFlex style={[paddingStyles, contentStyles]}>{children}</ViewFlex>
     </SafeAreaView>
   );
