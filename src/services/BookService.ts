@@ -26,7 +26,7 @@ export default {
         // Validate if isn't exists
         if (book.length === 0) throw Error('Book not found');
 
-        //
+        // Return book finded
         resolve({ ok: true, data: book[0] });
       } catch (error) {
         reject(error);
