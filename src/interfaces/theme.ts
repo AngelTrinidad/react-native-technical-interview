@@ -8,6 +8,7 @@ export interface ThemeColors {
   headerBackground: string;
   headerTitle: string;
   bookItemBackground: string;
+  cardBackground: string;
 }
 
 export interface ThemeFont {

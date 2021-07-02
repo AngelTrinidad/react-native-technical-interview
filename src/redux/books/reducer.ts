@@ -15,7 +15,12 @@ const reducer = (state = initialState, action: Actions) => {
     case ActionType.BOOK_DETAIL:
       return {
         ...state,
-        bookID: action.payload
+        bookDetail: action.payload
+      };
+    case ActionType.CLEAR_BOOK_DETAIL:
+      return {
+        ...state,
+        bookDetail: null
       };
     default:
       return state;

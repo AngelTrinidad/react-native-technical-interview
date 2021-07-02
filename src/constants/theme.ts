@@ -11,7 +11,8 @@ export const themeValues: Theme = {
     title: '#343A40',
     headerBackground: '#39A2DB',
     headerTitle: 'white',
-    bookItemBackground: 'white'
+    bookItemBackground: 'white',
+    cardBackground: 'white'
   },
   sizes: {
     paddingScreen: 16

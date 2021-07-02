@@ -26,7 +26,7 @@ const Library: React.FC = () => {
       dispatch(setBookDetail(book));
 
       // Navigate to the next screen
-      navigation.navigate('bookDetail');
+      navigation.navigate('BOOK_DETAIL');
     },
     [navigation, dispatch]
   );

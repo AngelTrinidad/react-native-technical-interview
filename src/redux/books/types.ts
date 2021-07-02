@@ -1,9 +1,10 @@
 import { Book } from '@interfaces/book';
-import { ReduxAction } from '@interfaces/redux';
+import { ReduxAction, ReduxEmptyAction } from '@interfaces/redux';
 
 export enum ActionType {
   BOOKS = 'BOOKS',
-  BOOK_DETAIL = 'BOOK_DETAIL'
+  BOOK_DETAIL = 'BOOK_DETAIL',
+  CLEAR_BOOK_DETAIL = 'CLEAR_BOOK_DETAIL'
 }
 
 export interface State {
@@ -13,6 +14,8 @@ export interface State {
 
 type SetBooks = ReduxAction<ActionType.BOOKS, Book[]>;
 
-type SetBookID = ReduxAction<ActionType.BOOK_DETAIL, Book>;
+type SetBookDetail = ReduxAction<ActionType.BOOK_DETAIL, Book>;
 
-export type Actions = SetBooks | SetBookID;
+type ClearBookDetail = ReduxEmptyAction<ActionType.CLEAR_BOOK_DETAIL>;
+
+export type Actions = SetBooks | SetBookDetail | ClearBookDetail;

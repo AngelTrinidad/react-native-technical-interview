@@ -14,6 +14,10 @@ export const setBookDetail = (payload: Book): Actions => ({
   payload
 });
 
+export const clearBookDetail = (): Actions => ({
+  type: ActionType.CLEAR_BOOK_DETAIL
+});
+
 export const getBooks = (): ReduxThunk<void> => async dispatch => {
   try {
     const { ok, data } = await BookService.getBooks();
