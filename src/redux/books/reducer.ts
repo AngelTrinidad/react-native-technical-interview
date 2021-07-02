@@ -1,15 +1,22 @@
-// import { BookState } from '@interfaces/book';
-import { ReduxAction } from '@interfaces/redux';
+import { State, Actions, ActionType } from './types';
 
-// import { actions } from './actions';
-
-const initialState = {
-  // TODO: Complete
+const initialState: State = {
+  books: [],
+  bookDetail: null
 };
 
-const reducer = (state = initialState, action: ReduxAction) => {
+const reducer = (state = initialState, action: Actions) => {
   switch (action.type) {
-    // TODO: Complete switch with book actios
+    case ActionType.BOOKS:
+      return {
+        ...state,
+        books: action.payload
+      };
+    case ActionType.BOOK_DETAIL:
+      return {
+        ...state,
+        bookID: action.payload
+      };
     default:
       return state;
   }
