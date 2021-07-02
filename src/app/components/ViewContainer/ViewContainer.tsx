@@ -7,7 +7,7 @@ import ViewFlex from '../ViewFlex/ViewFlex';
 
 import styles from './styles';
 
-type Props = ViewProps & {
+export type ViewContainerProps = ViewProps & {
   children?: React.ReactNode;
   safeAreasEdges?: Edge[];
   withPadding?: boolean;
@@ -18,7 +18,7 @@ type Props = ViewProps & {
   renderHeader?: () => React.ReactNode;
 };
 
-const ViewContainer: React.FC<Props> = ({
+const ViewContainer: React.FC<ViewContainerProps> = ({
   children,
   contentStyles,
   style,

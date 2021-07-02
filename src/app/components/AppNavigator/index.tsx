@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Routes from '@constants/routes';
-import Library from '@screens/Library';
 import { DEFAULT_OPTIONS } from '@constants/navigator';
+import Library from '@app/screens/Library/Library';
 
 const StackNavigator = createStackNavigator();
 
