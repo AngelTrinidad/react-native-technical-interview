@@ -4,6 +4,7 @@ export interface ThemeColors {
   text: string;
   textLight: string;
   primaryBackground: string;
+  title: string;
 }
 
 export interface ThemeFont {

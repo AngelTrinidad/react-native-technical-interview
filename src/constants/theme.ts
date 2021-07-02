@@ -7,7 +7,8 @@ export const themeValues: Theme = {
     secondary: '#F38BA0',
     text: '#444444',
     textLight: '#DDDDDD',
-    primaryBackground: '#B5EAEA'
+    primaryBackground: '#B5EAEA',
+    title: '#343A40'
   },
   sizes: {
     paddingScreen: 12
